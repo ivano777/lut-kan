@@ -1,0 +1,11 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_L32
+  group: tesi_ivano
+  description: Benchmark CPU con i parametri originali di ncaa_revision_base
+converter:
+  build_lut:
+    L: 32
+logging:
+  out_dir: outputs/tesi/cpu_L32
+  versioning: increment

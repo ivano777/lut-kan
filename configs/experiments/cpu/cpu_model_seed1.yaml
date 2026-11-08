@@ -1,0 +1,11 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_model_seed1
+  group: tesi_piano_completo
+  description: Inizializzazione modello; input invariati
+logging:
+  out_dir: outputs/tesi/cpu_model_seed1
+  versioning: increment
+float_model:
+  arch:
+    seed: 1

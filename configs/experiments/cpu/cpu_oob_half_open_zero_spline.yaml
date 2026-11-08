@@ -1,0 +1,16 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_oob_half_open_zero_spline
+  group: tesi_piano_completo
+  description: Normale senza clipping; confronto semantica OOB
+logging:
+  out_dir: outputs/tesi/cpu_oob_half_open_zero_spline
+  versioning: increment
+evaluation_inputs:
+  inputs:
+    clip_min: null
+    clip_max: null
+converter:
+  oob_policy:
+    boundary: half_open
+    mode: zero_spline

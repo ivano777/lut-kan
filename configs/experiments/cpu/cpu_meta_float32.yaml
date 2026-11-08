@@ -1,0 +1,11 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_meta_float32
+  group: tesi_piano_completo
+  description: Precisione metadati LUT
+logging:
+  out_dir: outputs/tesi/cpu_meta_float32
+  versioning: increment
+converter:
+  quant:
+    meta_dtype: float32

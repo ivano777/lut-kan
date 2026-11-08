@@ -1,0 +1,12 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_input_seed4
+  group: tesi_piano_completo
+  description: Seed effettivo ingressi; evaluation_inputs.seed allineato come metadato
+logging:
+  out_dir: outputs/tesi/cpu_input_seed4
+  versioning: increment
+runtime:
+  seed: 4
+evaluation_inputs:
+  seed: 4

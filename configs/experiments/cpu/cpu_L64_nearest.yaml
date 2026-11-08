@@ -1,0 +1,11 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_L64_nearest
+  group: tesi_ivano
+  description: 'Confronto con riferimento L64: interpolazione nearest invece di linear'
+converter:
+  interp:
+    mode: nearest
+logging:
+  out_dir: outputs/tesi/cpu_L64_nearest
+  versioning: increment

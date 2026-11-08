@@ -1,0 +1,10 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_N4096
+  group: tesi_piano_completo
+  description: Batch effettivo; tempi/batch e throughput
+logging:
+  out_dir: outputs/tesi/cpu_N4096
+  versioning: increment
+evaluation_inputs:
+  num_samples: 4096

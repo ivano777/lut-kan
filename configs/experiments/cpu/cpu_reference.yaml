@@ -1,0 +1,8 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_reference
+  group: tesi_piano_completo
+  description: Riferimento contemporaneo, L64 linear
+logging:
+  out_dir: outputs/tesi/cpu_riferimento
+  versioning: increment

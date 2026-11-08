@@ -1,0 +1,10 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_phi
+  group: tesi_piano_completo
+  description: Tabulazione funzione completa
+logging:
+  out_dir: outputs/tesi/cpu_phi
+  versioning: increment
+converter:
+  value_representation: phi

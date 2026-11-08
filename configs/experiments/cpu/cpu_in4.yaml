@@ -1,0 +1,13 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_in4
+  group: tesi_piano_completo
+  description: Numero ingressi; cambia carico di lavoro
+logging:
+  out_dir: outputs/tesi/cpu_in4
+  versioning: increment
+float_model:
+  arch:
+    width:
+    - 4
+    - 8

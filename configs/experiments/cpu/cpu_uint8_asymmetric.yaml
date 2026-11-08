@@ -1,0 +1,15 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_uint8_asymmetric
+  group: tesi_piano_completo
+  description: Schema coerente uint8 asimmetrico
+logging:
+  out_dir: outputs/tesi/cpu_uint8_asymmetric
+  versioning: increment
+converter:
+  quant:
+    dtype: uint8
+    scheme: asymmetric
+    qmin: 0
+    qmax: 255
+    zero_point: auto

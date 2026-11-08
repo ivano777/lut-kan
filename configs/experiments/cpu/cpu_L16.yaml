@@ -1,0 +1,11 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_L16
+  group: tesi_piano_completo
+  description: Risoluzione LUT
+logging:
+  out_dir: outputs/tesi/cpu_L16
+  versioning: increment
+converter:
+  build_lut:
+    L: 16

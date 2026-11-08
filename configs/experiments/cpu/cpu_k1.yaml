@@ -1,0 +1,11 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_k1
+  group: tesi_piano_completo
+  description: Grado spline; dominio esteso puo cambiare
+logging:
+  out_dir: outputs/tesi/cpu_k1
+  versioning: increment
+float_model:
+  arch:
+    k: 1

@@ -1,0 +1,11 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_grid16
+  group: tesi_piano_completo
+  description: Griglia spline; dominio esteso puo cambiare
+logging:
+  out_dir: outputs/tesi/cpu_grid16
+  versioning: increment
+float_model:
+  arch:
+    grid: 16

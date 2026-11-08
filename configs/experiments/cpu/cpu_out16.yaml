@@ -1,0 +1,13 @@
+_base_: ../../ncaa_revision_base.yaml
+experiment:
+  name: cpu_out16
+  group: tesi_piano_completo
+  description: Numero uscite; cambia carico di lavoro
+logging:
+  out_dir: outputs/tesi/cpu_out16
+  versioning: increment
+float_model:
+  arch:
+    width:
+    - 10
+    - 16
