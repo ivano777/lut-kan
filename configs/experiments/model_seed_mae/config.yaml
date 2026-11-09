@@ -1,0 +1,29 @@
+_base_: ../../ncaa_revision_base.yaml
+
+experiment:
+  name: model_seed_mae_10x8
+  group: seed_sensitivity
+  description: "MAE across random PyKAN model seeds, fixed input seed 0"
+runtime:
+  seed: 0
+float_model:
+  arch:
+    width: [10, 8]
+    seed: random
+evaluation_inputs:
+  num_samples: 1024
+  batch_size: 1024
+converter:
+  build_lut:
+    L: 32
+evaluation:
+  extra:
+    phi_error:
+      enable: false
+    speed:
+      enable: false
+      warmup_iters: 0
+      measure_iters: 1
+logging:
+  out_dir: outputs/tesi/model_seed_mae_10x8_10
+  versioning: increment

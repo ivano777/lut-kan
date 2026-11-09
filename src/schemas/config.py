@@ -18,7 +18,7 @@ class ExperimentConfig(BaseModel):
 
 
 class RuntimeConfig(BaseModel):
-    seed: int = 42
+    seed: Union[int, Literal["random"]] = 42
     device: Literal["cpu", "cuda"] = "cpu"
     num_threads: Optional[int] = 1
     deterministic: bool = True

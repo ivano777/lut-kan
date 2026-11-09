@@ -8,6 +8,7 @@ from types import SimpleNamespace
 from typing import Any, Dict
 import inspect
 import json
+import secrets
 
 import sys
 from pathlib import Path
@@ -680,8 +681,21 @@ def _run_single_layer_pipeline(adapter, edges, x, cfg, out_dir: Path, results: D
     _print_results_summary(results)
 
 
+def _resolve_random_seeds(cfg, raw: Dict[str, Any]) -> None:
+    """Resolve once per run, keeping the saved configuration consistent."""
+    if cfg.runtime.seed == "random":
+        cfg.runtime.seed = secrets.randbelow(2**32)
+        raw.setdefault("runtime", {})["seed"] = cfg.runtime.seed
+
+    arch = cfg.float_model.arch
+    if arch is not None and arch.get("seed") == "random":
+        arch["seed"] = secrets.randbelow(2**32)
+        raw.setdefault("float_model", {}).setdefault("arch", {})["seed"] = arch["seed"]
+
+
 def run(config_path: str | Path) -> Path:
     cfg, raw = load_and_validate(config_path)
+    _resolve_random_seeds(cfg, raw)
 
     repo_root = Path(__file__).resolve().parents[2]
     out_dir = _resolve_out_dir(str(cfg.logging.out_dir), str(cfg.logging.versioning), repo_root)

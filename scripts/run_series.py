@@ -13,7 +13,7 @@ from src.utils.parse_config import load_and_validate
 
 
 def add_run_options(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument('--count', type=int, default=10, help='Runs per configuration (default: 10)')
+    parser.add_argument('--count', type=int, default=1, help='Runs per configuration (default: 1)')
     parser.add_argument('--threads', type=int, default=1, help='Threads per process (default: 1)')
     parser.add_argument('--dry-run', action='store_true', help='Validate and print without running')
 
@@ -28,7 +28,7 @@ def validate_config(config: Path) -> Path:
     return config
 
 
-def run_series(config: Path, count: int = 10, threads: int = 1, dry_run: bool = False) -> None:
+def run_series(config: Path, count: int = 1, threads: int = 1, dry_run: bool = False) -> None:
     if count < 1 or threads < 1:
         raise ValueError('count and threads must be positive')
     config = validate_config(config)
