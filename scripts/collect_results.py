@@ -34,6 +34,7 @@ def infer_run_params(j: Dict[str, Any]) -> Dict[str, Any]:
     if not isinstance(rp, dict):
         rp = {}
     out = dict(rp)
+    out.setdefault("exp_name", safe_get(j, "experiment.name", None))
 
     # Backward-compatible fallbacks
     out.setdefault("L", safe_get(j, "converter.L", None))
@@ -164,7 +165,7 @@ def main() -> None:
         "--group_keys",
         type=str,
         default="oob_policy_mode,boundary_mode,value_representation,dtype,scheme,interp,L",
-        help="Comma-separated grouping keys (from run_params).",
+        help="Comma-separated grouping keys (run_params fields or exp_name).",
     )
     args = ap.parse_args()
 

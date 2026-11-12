@@ -1,0 +1,13 @@
+_base_: input_seed_mae.yaml
+
+experiment:
+  name: input_seed_mae_10x8
+  description: "Fixed PyKAN 10->8, L32, 1024 inputs; random input seed per run"
+float_model:
+  arch:
+    width: [10, 8]
+evaluation_inputs:
+  num_samples: 1024
+  batch_size: 1024
+logging:
+  out_dir: outputs/tesi_old/input_seed_mae_10x8_10

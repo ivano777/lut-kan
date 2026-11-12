@@ -1,0 +1,281 @@
+{
+  "experiment": {
+    "name": "cpu_phi",
+    "group": "tesi_piano_completo",
+    "description": "Tabulazione funzione completa"
+  },
+  "float_backend": "pykan",
+  "converter_enabled": true,
+  "_raw_evaluation_inputs": {
+    "distribution": "normal",
+    "mean": 0.0,
+    "std": 1.0,
+    "clip_min": -1.75,
+    "clip_max": 1.75
+  },
+  "run_params": {
+    "label": "pykan",
+    "N": 1024,
+    "runtime_seed": 0,
+    "evaluation_input_seed": 0,
+    "in_dim": 10,
+    "out_dim": 8,
+    "edges": 80,
+    "device": "cpu",
+    "L": 64,
+    "interp": "linear",
+    "value_representation": "phi",
+    "boundary_mode": "closed",
+    "x_min": -1.75,
+    "x_max": 1.75,
+    "x_sample_min": -1.75,
+    "x_sample_max": 1.75,
+    "x_gen_distribution": "normal",
+    "x_gen_mean": 0.0,
+    "x_gen_std": 1.0,
+    "x_gen_x_min": null,
+    "x_gen_x_max": null,
+    "x_gen_clip_min": -1.75,
+    "x_gen_clip_max": 1.75,
+    "dtype": "int8",
+    "scheme": "symmetric",
+    "qmin": -127,
+    "qmax": 127,
+    "build_ms": 259.1303999943193,
+    "ref_ms": 4.830499994568527,
+    "dense_numpy_ms": 1.1110999912489206,
+    "oob_behavior_effective": "clip",
+    "oob_mode_cfg": "clip_x",
+    "oob_policy_mode": "clip_x"
+  },
+  "debug": {
+    "worst_bspline_numpy_vs_float": {
+      "n": 117,
+      "j": 3,
+      "abs_err": 2.384185791015625e-07,
+      "y_hat": -1.0990345478057861,
+      "y_ref": -1.0990347862243652,
+      "x": [
+        0.6587348580360413,
+        -0.5615577101707458,
+        1.75,
+        -1.107312560081482,
+        -0.46272358298301697,
+        -0.9644697308540344,
+        -0.10276079922914505,
+        1.0822192430496216,
+        1.297785997390747,
+        0.463517427444458
+      ]
+    },
+    "worst_output_sanity": {
+      "n": 296,
+      "j": 3,
+      "abs_err": 0.002791285514831543,
+      "y_hat": -1.2133642435073853,
+      "y_ref": -1.2161555290222168,
+      "x": [
+        0.6250779032707214,
+        -0.28210926055908203,
+        0.9844398498535156,
+        -0.5028697848320007,
+        -0.42015883326530457,
+        -0.21233102679252625,
+        0.542058527469635,
+        1.6095068454742432,
+        1.3212871551513672,
+        1.274390697479248
+      ]
+    },
+    "worst_dense_numpy_vs_ref": {
+      "n": 0,
+      "j": 0,
+      "abs_err": 0.0,
+      "y_hat": -0.121172696352005,
+      "y_ref": -0.121172696352005,
+      "x": [
+        0.1257302165031433,
+        -0.13210485875606537,
+        0.6404226422309875,
+        0.10490011423826218,
+        -0.5356693863868713,
+        0.3615950644016266,
+        1.3040000200271606,
+        0.9470809698104858,
+        -0.7037352323532104,
+        -1.2654215097427368
+      ]
+    },
+    "worst_output_sanity_numba": {
+      "n": 296,
+      "j": 3,
+      "abs_err": 0.002791285514831543,
+      "y_hat": -1.2133642435073853,
+      "y_ref": -1.2161555290222168,
+      "x": [
+        0.6250779032707214,
+        -0.28210926055908203,
+        0.9844398498535156,
+        -0.5028697848320007,
+        -0.42015883326530457,
+        -0.21233102679252625,
+        0.542058527469635,
+        1.6095068454742432,
+        1.3212871551513672,
+        1.274390697479248
+      ]
+    }
+  },
+  "numba": {
+    "version": "0.68.1",
+    "num_threads": 1,
+    "compile_ms": 15.750000005937181
+  },
+  "memory": {
+    "model": {
+      "params_bytes": 6808,
+      "buffers_bytes": 0,
+      "total_bytes": 6808,
+      "params_count": 1702,
+      "buffers_count": 0
+    },
+    "lut": {
+      "lut_total_bytes": 76220,
+      "breakdown": {
+        "knots_bytes": 60,
+        "q_table_bytes": 71680,
+        "scale_bytes": 2240,
+        "y_min_bytes": 2240
+      }
+    },
+    "ratios": {
+      "lut_over_model": 11.195652173913043,
+      "model_over_lut": 0.08932038834951456
+    }
+  },
+  "bspline_baseline": {
+    "available": true,
+    "import_error": null
+  },
+  "bspline_numpy_vs_float": {
+    "mae": 1.743543975862849e-08,
+    "rmse": 2.734637760681835e-08,
+    "max_abs": 2.384185791015625e-07
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.687925300007919,
+    "per_iter_ms": 26.87925300007919,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6703896999970311,
+    "per_iter_ms": 6.703896999970311,
+    "iters": 100.0
+  },
+  "bspline_numba_vs_float": {
+    "mae": 2.0366510256053516e-08,
+    "rmse": 3.031561490729473e-08,
+    "max_abs": 2.384185791015625e-07
+  },
+  "output_sanity": {
+    "mae": 0.00040637527126818895,
+    "rmse": 0.0005347716505639255,
+    "max_abs": 0.002791285514831543
+  },
+  "dense_numpy_vs_ref": {
+    "mae": 0.0,
+    "rmse": 0.0,
+    "max_abs": 0.0
+  },
+  "output_sanity_dense_numpy": {
+    "mae": 0.00040637527126818895,
+    "rmse": 0.0005347716505639255,
+    "max_abs": 0.002791285514831543
+  },
+  "input_sanity": {
+    "x_min": -1.75,
+    "x_max": 1.75,
+    "OOB_any_frac": 0.0,
+    "OOB_all_in_frac": 1.0,
+    "OOB_per_coord_mean": 0.0,
+    "OOB_per_coord_max": 0.0
+  },
+  "output_sanity_in_range": {
+    "mae": 0.00040637527126818895,
+    "rmse": 0.0005347716505639255,
+    "max_abs": 0.002791285514831543
+  },
+  "output_sanity_oob_only": {
+    "mae": 0.0,
+    "rmse": 0.0,
+    "max_abs": 0.0
+  },
+  "phi_error_summary": {
+    "edges": 80.0,
+    "max_abs_mean": 0.0009507980430498719,
+    "max_abs_p95": 0.0017138004768639803,
+    "max_abs_max": 0.0019035041332244873
+  },
+  "phi_error_topk": [
+    {
+      "edge_id": 7,
+      "src": 7,
+      "dst": 0,
+      "mae": 0.0002340777573408559,
+      "rmse": 0.0003537872398737818,
+      "max_abs": 0.0019035041332244873
+    },
+    {
+      "edge_id": 27,
+      "src": 7,
+      "dst": 2,
+      "mae": 0.0002280669577885419,
+      "rmse": 0.00034927568049170077,
+      "max_abs": 0.0018264353275299072
+    },
+    {
+      "edge_id": 38,
+      "src": 8,
+      "dst": 3,
+      "mae": 0.0002238159504486248,
+      "rmse": 0.00033834046917036176,
+      "max_abs": 0.001761108636856079
+    }
+  ],
+  "speed_float": {
+    "total_s": 1.2393866000056732,
+    "per_iter_ms": 12.393866000056732,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.5227470999961952,
+    "per_iter_ms": 5.227470999961952,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.1298298000037903,
+    "per_iter_ms": 1.298298000037903,
+    "iters": 100.0
+  },
+  "numba_vs_ref": {
+    "mae": 7.7114226115782e-09,
+    "rmse": 1.6302557526159944e-08,
+    "max_abs": 1.1920928955078125e-07
+  },
+  "output_sanity_numba": {
+    "mae": 0.00040637532947584987,
+    "rmse": 0.0005347715341486037,
+    "max_abs": 0.002791285514831543
+  },
+  "speed_dense_numba": {
+    "total_s": 0.042798900001798756,
+    "per_iter_ms": 0.42798900001798756,
+    "iters": 100.0
+  },
+  "dense_numpy_vs_ref_max_abs": 0.0,
+  "dense_numpy_vs_ref_rmse": 0.0,
+  "numba_vs_ref_max_abs": 1.1920928955078125e-07,
+  "numba_vs_ref_rmse": 1.6302557526159944e-08,
+  "speedup_lut_numpy_vs_bspline_numpy": 20.703454060080556,
+  "speedup_lut_numba_vs_bspline_numba": 15.663713319007169
+}

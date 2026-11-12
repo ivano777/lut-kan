@@ -1,0 +1,28 @@
+_base_: ../configs/ncaa_revision_base.yaml
+
+experiment:
+  name: test_L32
+  group: smoke
+
+float_model:
+  arch:
+    width: [2, 2]
+
+evaluation_inputs:
+  num_samples: 16
+
+converter:
+  build_lut:
+    L: 32
+
+evaluation:
+  extra:
+    phi_error:
+      enable: false
+    speed:
+      warmup_iters: 2
+      measure_iters: 5
+
+logging:
+  out_dir: outputs/tesi_old/test/L32
+  versioning: increment

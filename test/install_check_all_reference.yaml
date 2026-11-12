@@ -1,0 +1,6 @@
+_base_: install_check_reference.yaml
+
+experiment:
+  name: clean_install_all_reference
+logging:
+  out_dir: outputs/install_all_check_20261111

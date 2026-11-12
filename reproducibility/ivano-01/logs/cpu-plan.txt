@@ -1,0 +1,5819 @@
+35 configurations, 35 runs
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_grid16.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_grid16.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_grid16",
+  "group": "tesi_piano_completo",
+  "description": "Griglia spline; dominio esteso puo cambiare"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.375,
+  "x_max": 1.375,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 413.4924999962095,
+  "ref_ms": 5.03450000542216,
+  "dense_numpy_ms": 1.3944000093033537,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.375,
+  "x_max": 1.375,
+  "OOB_any_frac": 0.8330078125,
+  "OOB_all_in_frac": 0.1669921875,
+  "OOB_per_coord_mean": 0.16455078125,
+  "OOB_per_coord_max": 0.177734375
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 8.764573067310266e-06,
+  "rmse": 1.1018626537406817e-05,
+  "max_abs": 4.303827881813049e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 1.2208181033201981e-05,
+  "max_abs_p95": 1.3883039173379075e-05,
+  "max_abs_max": 1.4916062355041504e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 9688,
+    "buffers_bytes": 0,
+    "total_bytes": 9688,
+    "params_count": 2422,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 119772,
+    "breakdown": {
+      "knots_bytes": 92,
+      "q_table_bytes": 112640,
+      "scale_bytes": 3520,
+      "y_min_bytes": 3520
+    }
+  },
+  "ratios": {
+    "lut_over_model": 12.362923203963666,
+    "model_over_lut": 0.08088701866880406
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.3334522999939509,
+    "per_iter_ms": 13.334522999939509,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6440866000048118,
+    "per_iter_ms": 6.440866000048118,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.18442429999413434,
+    "per_iter_ms": 1.8442429999413434,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.04766820000077132,
+    "per_iter_ms": 0.4766820000077132,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 4.313947999995435,
+    "per_iter_ms": 43.13947999995435,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.7452689999918221,
+    "per_iter_ms": 7.452689999918221,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.7028934706786458e-08,
+  "rmse": 2.592582504234997e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.6642275113554206e-08,
+  "rmse": 2.6295557731259578e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 1.9723058741760724e-08,
+  "rmse": 2.9303626192245247e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_grid16\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_grid4.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_grid4.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_grid4",
+  "group": "tesi_piano_completo",
+  "description": "Griglia spline; dominio esteso puo cambiare"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -2.5,
+  "x_max": 2.5,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 193.9754999912111,
+  "ref_ms": 5.71009999839589,
+  "dense_numpy_ms": 2.326300003915094,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -2.5,
+  "x_max": 2.5,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 3.563012433005497e-05,
+  "rmse": 4.475432069739327e-05,
+  "max_abs": 0.00017410516738891602
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 4.1454448364675045e-05,
+  "max_abs_p95": 5.064876677352004e-05,
+  "max_abs_max": 5.6177377700805664e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 5368,
+    "buffers_bytes": 0,
+    "total_bytes": 5368,
+    "params_count": 1342,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 54444,
+    "breakdown": {
+      "knots_bytes": 44,
+      "q_table_bytes": 51200,
+      "scale_bytes": 1600,
+      "y_min_bytes": 1600
+    }
+  },
+  "ratios": {
+    "lut_over_model": 10.142324888226527,
+    "model_over_lut": 0.09859672323855705
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.2686820999952033,
+    "per_iter_ms": 12.686820999952033,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6816930999921169,
+    "per_iter_ms": 6.816930999921169,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.18467689999670256,
+    "per_iter_ms": 1.8467689999670256,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.0459225999948103,
+    "per_iter_ms": 0.459225999948103,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.0325885000056587,
+    "per_iter_ms": 20.325885000056587,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.575502099993173,
+    "per_iter_ms": 5.75502099993173,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.9474105883432458e-08,
+  "rmse": 2.8932340967458003e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.7963998288905714e-08,
+  "rmse": 2.762443784831703e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.127610443380945e-08,
+  "rmse": 3.143450655329616e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_grid4\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_in16.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_in16.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_in16",
+  "group": "tesi_piano_completo",
+  "description": "Numero ingressi; cambia carico di lavoro"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 16,
+  "out_dim": 8,
+  "edges": 128,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 479.83409999869764,
+  "ref_ms": 9.753100006491877,
+  "dense_numpy_ms": 2.4714000028325245,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.8057946363114752e-05,
+  "rmse": 2.2618705770582892e-05,
+  "max_abs": 9.010732173919678e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 128.0,
+  "max_abs_mean": 1.8036411347566172e-05,
+  "max_abs_p95": 2.1715834009228274e-05,
+  "max_abs_max": 2.4456530809402466e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 10816,
+    "buffers_bytes": 0,
+    "total_bytes": 10816,
+    "params_count": 2704,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 121916,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 114688,
+      "scale_bytes": 3584,
+      "y_min_bytes": 3584
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.271819526627219,
+    "model_over_lut": 0.08871682141802553
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.9492212999903131,
+    "per_iter_ms": 19.49221299990313,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.9728598000074271,
+    "per_iter_ms": 9.728598000074271,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.24925849999999627,
+    "per_iter_ms": 2.4925849999999627,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.07353939999302384,
+    "per_iter_ms": 0.7353939999302384,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 4.675113699995563,
+    "per_iter_ms": 46.751136999955634,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 1.227040700003272,
+    "per_iter_ms": 12.27040700003272,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 2.1027808827511763e-08,
+  "rmse": 3.0937702177880055e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 2.1536294525503763e-08,
+  "rmse": 3.260706904484323e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.4444984703109185e-08,
+  "rmse": 3.542974269521437e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_in16\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_in32.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_in32.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_in32",
+  "group": "tesi_piano_completo",
+  "description": "Numero ingressi; cambia carico di lavoro"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 32,
+  "out_dim": 8,
+  "edges": 256,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 785.0017000018852,
+  "ref_ms": 17.778100009309128,
+  "dense_numpy_ms": 4.951000009896234,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7800954083213583e-05,
+  "rmse": 2.2317275579553097e-05,
+  "max_abs": 9.906291961669922e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 256.0,
+  "max_abs_mean": 1.2669490388361737e-05,
+  "max_abs_p95": 1.5101628378033638e-05,
+  "max_abs_max": 1.715589314699173e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 21504,
+    "buffers_bytes": 0,
+    "total_bytes": 21504,
+    "params_count": 5376,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 243772,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 229376,
+      "scale_bytes": 7168,
+      "y_min_bytes": 7168
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.336123511904763,
+    "model_over_lut": 0.08821357662077679
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 4.040389400004642,
+    "per_iter_ms": 40.40389400004642,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 1.9754032000055304,
+    "per_iter_ms": 19.754032000055304,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.5195562000008067,
+    "per_iter_ms": 5.195562000008067,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.15405280000413768,
+    "per_iter_ms": 1.5405280000413768,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 8.906478899996728,
+    "per_iter_ms": 89.06478899996728,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 2.182631899995613,
+    "per_iter_ms": 21.82631899995613,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 2.2509581754093233e-08,
+  "rmse": 3.202023890480632e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 2.6896973537304802e-08,
+  "rmse": 3.891279476420095e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.9153795821912354e-08,
+  "rmse": 4.11504963437892e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_in32\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_in4.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_in4.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_in4",
+  "group": "tesi_piano_completo",
+  "description": "Numero ingressi; cambia carico di lavoro"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 4,
+  "out_dim": 8,
+  "edges": 32,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 135.45600000361446,
+  "ref_ms": 3.611399995861575,
+  "dense_numpy_ms": 0.6880000000819564,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7798303815652616e-05,
+  "rmse": 2.2543445084011182e-05,
+  "max_abs": 9.429454803466797e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 32.0,
+  "max_abs_mean": 3.5737844882532954e-05,
+  "max_abs_p95": 4.214099681121297e-05,
+  "max_abs_max": 4.6294182538986206e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 2800,
+    "buffers_bytes": 0,
+    "total_bytes": 2800,
+    "params_count": 700,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 30524,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 28672,
+      "scale_bytes": 896,
+      "y_min_bytes": 896
+    }
+  },
+  "ratios": {
+    "lut_over_model": 10.901428571428571,
+    "model_over_lut": 0.09173109684182938
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 0.6167513999971561,
+    "per_iter_ms": 6.167513999971561,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.22673880000365898,
+    "per_iter_ms": 2.26738800003659,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.06131350000214297,
+    "per_iter_ms": 0.6131350000214297,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.017867599992314354,
+    "per_iter_ms": 0.17867599992314354,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 1.0215176999918185,
+    "per_iter_ms": 10.215176999918185,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.27800020000722725,
+    "per_iter_ms": 2.7800020000722725,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 9.93860194142826e-09,
+  "rmse": 1.7235942451065966e-08,
+  "max_abs": 1.1920928955078125e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 3.117584412848373e-09,
+  "rmse": 8.592373923477226e-09,
+  "max_abs": 1.1920928955078125e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 9.82232162272112e-09,
+  "rmse": 1.7371183602676865e-08,
+  "max_abs": 1.1920928955078125e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_in4\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_input_seed1.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_input_seed1.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_input_seed1",
+  "group": "tesi_piano_completo",
+  "description": "Seed effettivo ingressi; evaluation_inputs.seed allineato come metadato"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 1,
+  "evaluation_input_seed": 1,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 316.2847000057809,
+  "ref_ms": 5.167199997231364,
+  "dense_numpy_ms": 1.3884000072721392,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7897486031870358e-05,
+  "rmse": 2.238871093140915e-05,
+  "max_abs": 8.842349052429199e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.2001925999938976,
+    "per_iter_ms": 12.001925999938976,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.5743599999987055,
+    "per_iter_ms": 5.743599999987055,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.16786109999520704,
+    "per_iter_ms": 1.6786109999520704,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.0480466000008164,
+    "per_iter_ms": 0.480466000008164,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.6803234000108205,
+    "per_iter_ms": 26.803234000108205,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6373244999995222,
+    "per_iter_ms": 6.373244999995222,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.766003165926122e-08,
+  "rmse": 2.674421040183006e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.6865016050360282e-08,
+  "rmse": 2.6294657118342002e-08,
+  "max_abs": 1.1920928955078125e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0521071064649732e-08,
+  "rmse": 3.065110476541122e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_input_seed1\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_input_seed2.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_input_seed2.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_input_seed2",
+  "group": "tesi_piano_completo",
+  "description": "Seed effettivo ingressi; evaluation_inputs.seed allineato come metadato"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 2,
+  "evaluation_input_seed": 2,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 282.5931999977911,
+  "ref_ms": 6.143299993709661,
+  "dense_numpy_ms": 2.7697999903466552,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.765233901096508e-05,
+  "rmse": 2.2153257305035368e-05,
+  "max_abs": 9.98079776763916e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.2940267000085441,
+    "per_iter_ms": 12.940267000085441,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6651682999945479,
+    "per_iter_ms": 6.6516829999454785,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.15768629999365658,
+    "per_iter_ms": 1.5768629999365658,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.04829940000490751,
+    "per_iter_ms": 0.4829940000490751,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.7786507999990135,
+    "per_iter_ms": 27.786507999990135,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.718731500004651,
+    "per_iter_ms": 7.18731500004651,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.781070047002231e-08,
+  "rmse": 2.7199600793892387e-08,
+  "max_abs": 1.4901161193847656e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.745537758779392e-08,
+  "rmse": 2.7213083342303435e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.080259875469892e-08,
+  "rmse": 3.120539915357767e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_input_seed2\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_input_seed3.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_input_seed3.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_input_seed3",
+  "group": "tesi_piano_completo",
+  "description": "Seed effettivo ingressi; evaluation_inputs.seed allineato come metadato"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 3,
+  "evaluation_input_seed": 3,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 280.1418000017293,
+  "ref_ms": 5.585200007772073,
+  "dense_numpy_ms": 2.1493000094778836,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7416321497876197e-05,
+  "rmse": 2.1966738131595775e-05,
+  "max_abs": 8.8520348072052e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.3427251999964938,
+    "per_iter_ms": 13.427251999964938,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.7081410000100732,
+    "per_iter_ms": 7.081410000100732,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.17770759999984875,
+    "per_iter_ms": 1.7770759999984875,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.04671969999617431,
+    "per_iter_ms": 0.46719699996174313,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.6053268000105163,
+    "per_iter_ms": 26.053268000105163,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.7066251000069315,
+    "per_iter_ms": 7.066251000069315,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.761498324981403e-08,
+  "rmse": 2.703719381713654e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.735457999529899e-08,
+  "rmse": 2.7195277141345287e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0453381210927546e-08,
+  "rmse": 3.0878080536922425e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_input_seed3\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_input_seed4.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_input_seed4.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_input_seed4",
+  "group": "tesi_piano_completo",
+  "description": "Seed effettivo ingressi; evaluation_inputs.seed allineato come metadato"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 4,
+  "evaluation_input_seed": 4,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 265.5921999976272,
+  "ref_ms": 7.554900003015064,
+  "dense_numpy_ms": 1.5585000073770061,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.768295987858437e-05,
+  "rmse": 2.2147665731608868e-05,
+  "max_abs": 8.067488670349121e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.2595231000013882,
+    "per_iter_ms": 12.595231000013882,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6609504000080051,
+    "per_iter_ms": 6.609504000080051,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.16259580000769347,
+    "per_iter_ms": 1.6259580000769347,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.049786200004746206,
+    "per_iter_ms": 0.4978620000474621,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.7387446999928216,
+    "per_iter_ms": 27.387446999928216,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.682010700009414,
+    "per_iter_ms": 6.82010700009414,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.782403380445885e-08,
+  "rmse": 2.7478707309569472e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.7602559410079266e-08,
+  "rmse": 2.7972520300068027e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0810752232591767e-08,
+  "rmse": 3.1784349374675e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_input_seed4\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_k1.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_k1.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_k1",
+  "group": "tesi_piano_completo",
+  "description": "Grado spline; dominio esteso puo cambiare"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.25,
+  "x_max": 1.25,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 267.8177999914624,
+  "ref_ms": 8.270499994978309,
+  "dense_numpy_ms": 3.0435999942710623,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.25,
+  "x_max": 1.25,
+  "OOB_any_frac": 0.91015625,
+  "OOB_all_in_frac": 0.08984375,
+  "OOB_per_coord_mean": 0.2080078125,
+  "OOB_per_coord_max": 0.2197265625
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7483351257396862e-05,
+  "rmse": 2.1966932763461955e-05,
+  "max_abs": 8.378922939300537e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.1167679733480327e-05,
+  "max_abs_p95": 2.416903225821443e-05,
+  "max_abs_max": 2.4721026420593262e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6008,
+    "buffers_bytes": 0,
+    "total_bytes": 6008,
+    "params_count": 1502,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 54444,
+    "breakdown": {
+      "knots_bytes": 44,
+      "q_table_bytes": 51200,
+      "scale_bytes": 1600,
+      "y_min_bytes": 1600
+    }
+  },
+  "ratios": {
+    "lut_over_model": 9.061917443408788,
+    "model_over_lut": 0.11035192124017339
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.1962700000003679,
+    "per_iter_ms": 11.962700000003679,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.8325564000115264,
+    "per_iter_ms": 8.325564000115264,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.18798069999320433,
+    "per_iter_ms": 1.8798069999320433,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.052595300003304146,
+    "per_iter_ms": 0.5259530000330415,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.3919614999904297,
+    "per_iter_ms": 23.919614999904297,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.46815820000483654,
+    "per_iter_ms": 4.681582000048365,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.745362965266395e-08,
+  "rmse": 2.6554365817332837e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.7327373313946737e-08,
+  "rmse": 2.711991520243373e-08,
+  "max_abs": 1.1920928955078125e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.052021486065314e-08,
+  "rmse": 3.063676601300358e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_k1\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_k2.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_k2.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_k2",
+  "group": "tesi_piano_completo",
+  "description": "Grado spline; dominio esteso puo cambiare"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.5,
+  "x_max": 1.5,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 171.6273999918485,
+  "ref_ms": 4.949900001520291,
+  "dense_numpy_ms": 1.4599999994970858,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.5,
+  "x_max": 1.5,
+  "OOB_any_frac": 0.7529296875,
+  "OOB_all_in_frac": 0.2470703125,
+  "OOB_per_coord_mean": 0.13056640625,
+  "OOB_per_coord_max": 0.1474609375
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 2.552802652644459e-05,
+  "rmse": 3.246881897212006e-05,
+  "max_abs": 0.00014594197273254395
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 3.8867496186867356e-05,
+  "max_abs_p95": 6.678658246528357e-05,
+  "max_abs_max": 7.820874452590942e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6408,
+    "buffers_bytes": 0,
+    "total_bytes": 6408,
+    "params_count": 1602,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 65332,
+    "breakdown": {
+      "knots_bytes": 52,
+      "q_table_bytes": 61440,
+      "scale_bytes": 1920,
+      "y_min_bytes": 1920
+    }
+  },
+  "ratios": {
+    "lut_over_model": 10.19538077403246,
+    "model_over_lut": 0.0980836343598849
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.5912048000027426,
+    "per_iter_ms": 15.912048000027424,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.7928000999963842,
+    "per_iter_ms": 7.928000999963842,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.19664350000675768,
+    "per_iter_ms": 1.966435000067577,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.05009929998777807,
+    "per_iter_ms": 0.5009929998777807,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 1.913903200009372,
+    "per_iter_ms": 19.13903200009372,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.5848466999887023,
+    "per_iter_ms": 5.848466999887023,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.749535627482146e-08,
+  "rmse": 2.6894959148648923e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.7629091075832548e-08,
+  "rmse": 2.7794040846629287e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.066185267324272e-08,
+  "rmse": 3.092829459205859e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_k2\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_k5.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_k5.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_k5",
+  "group": "tesi_piano_completo",
+  "description": "Grado spline; dominio esteso puo cambiare"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -2.25,
+  "x_max": 2.25,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 597.159199998714,
+  "ref_ms": 9.060199998202734,
+  "dense_numpy_ms": 1.7004999972414225,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -2.25,
+  "x_max": 2.25,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.899808194139041e-05,
+  "rmse": 2.379679608566221e-05,
+  "max_abs": 0.00010435283184051514
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.5556062610121444e-05,
+  "max_abs_p95": 3.705278504639864e-05,
+  "max_abs_max": 4.11495566368103e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 7608,
+    "buffers_bytes": 0,
+    "total_bytes": 7608,
+    "params_count": 1902,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 97996,
+    "breakdown": {
+      "knots_bytes": 76,
+      "q_table_bytes": 92160,
+      "scale_bytes": 2880,
+      "y_min_bytes": 2880
+    }
+  },
+  "ratios": {
+    "lut_over_model": 12.880651945320714,
+    "model_over_lut": 0.07763582187028042
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 2.0705985000095097,
+    "per_iter_ms": 20.705985000095097,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.7495816000009654,
+    "per_iter_ms": 7.495816000009654,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.22332730000198353,
+    "per_iter_ms": 2.2332730000198353,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.050848500002757646,
+    "per_iter_ms": 0.5084850000275765,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 7.009467700001551,
+    "per_iter_ms": 70.09467700001551,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 1.0223729999997886,
+    "per_iter_ms": 10.223729999997886,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8657097200502903e-08,
+  "rmse": 2.8050337164131633e-08,
+  "max_abs": 1.1920928955078125e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.7196768453686673e-08,
+  "rmse": 2.6932232444210058e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.072215465886984e-08,
+  "rmse": 3.088126732109231e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_k5\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_L128.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_L128.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_L128",
+  "group": "tesi_piano_completo",
+  "description": "Risoluzione LUT"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 128,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 338.9439000020502,
+  "ref_ms": 10.131800008821301,
+  "dense_numpy_ms": 3.046600002562627,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.772951873135753e-05,
+  "rmse": 2.232938822999131e-05,
+  "max_abs": 8.752942085266113e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.250252327939961e-05,
+  "max_abs_p95": 2.5754514354048297e-05,
+  "max_abs_max": 2.7496367692947388e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 147900,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 143360,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 21.724441833137487,
+    "model_over_lut": 0.046031102096010815
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.346799100007047,
+    "per_iter_ms": 13.46799100007047,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.7413834000035422,
+    "per_iter_ms": 7.413834000035422,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.23309589999553282,
+    "per_iter_ms": 2.330958999955328,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.05881339999905322,
+    "per_iter_ms": 0.5881339999905322,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 3.0344761999876937,
+    "per_iter_ms": 30.344761999876937,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.7686631999968085,
+    "per_iter_ms": 7.686631999968085,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.777598868102359e-08,
+  "rmse": 2.7113715717064224e-08,
+  "max_abs": 1.4901161193847656e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.743543975862849e-08,
+  "rmse": 2.734637760681835e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0366510256053516e-08,
+  "rmse": 3.031561490729473e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_L128\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_L16.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_L16.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_L16",
+  "group": "tesi_piano_completo",
+  "description": "Risoluzione LUT"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 16,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 423.05729999498,
+  "ref_ms": 7.030599997960962,
+  "dense_numpy_ms": 1.3861999905202538,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 2.0268287698854692e-05,
+  "rmse": 2.5559746063663624e-05,
+  "max_abs": 9.751319885253906e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.7014913939638063e-05,
+  "max_abs_p95": 3.4955028240801767e-05,
+  "max_abs_max": 4.179030656814575e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 22460,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 17920,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 3.299059929494712,
+    "model_over_lut": 0.3031166518254675
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.5287625000055414,
+    "per_iter_ms": 15.287625000055414,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6341684999933932,
+    "per_iter_ms": 6.341684999933932,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.2700595000060275,
+    "per_iter_ms": 2.700595000060275,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.04480800000601448,
+    "per_iter_ms": 0.4480800000601448,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.872414100012975,
+    "per_iter_ms": 28.724141000129748,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.7562105000106385,
+    "per_iter_ms": 7.562105000106385,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8035823501350023e-08,
+  "rmse": 2.7476202646425918e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.743543975862849e-08,
+  "rmse": 2.734637760681835e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0366510256053516e-08,
+  "rmse": 3.031561490729473e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_L16\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_L32.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_L32.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_L32",
+  "group": "tesi_ivano",
+  "description": "Benchmark CPU con i parametri originali di ncaa_revision_base"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 32,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 278.38109999720473,
+  "ref_ms": 5.431000012322329,
+  "dense_numpy_ms": 1.356699998723343,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.799584242689889e-05,
+  "rmse": 2.2610023734159768e-05,
+  "max_abs": 9.301304817199707e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2568294298253022e-05,
+  "max_abs_p95": 2.615808080008719e-05,
+  "max_abs_max": 2.759695053100586e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 40380,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 35840,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 5.931257344300823,
+    "model_over_lut": 0.16859831599801883
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.5429579000046942,
+    "per_iter_ms": 15.429579000046942,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.7864102000021376,
+    "per_iter_ms": 7.864102000021377,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.3214215000043623,
+    "per_iter_ms": 3.214215000043623,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.06327389999933075,
+    "per_iter_ms": 0.6327389999933075,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.842539000004763,
+    "per_iter_ms": 28.425390000047628,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.7142872999975225,
+    "per_iter_ms": 7.142872999975225,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8287746428313767e-08,
+  "rmse": 2.7912051336898003e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.743543975862849e-08,
+  "rmse": 2.734637760681835e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0366510256053516e-08,
+  "rmse": 3.031561490729473e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_L32\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_L64_nearest.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_L64_nearest.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_L64_nearest",
+  "group": "tesi_ivano",
+  "description": "Confronto con riferimento L64: interpolazione nearest invece di linear"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "nearest",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 253.77840000146534,
+  "ref_ms": 5.895099995541386,
+  "dense_numpy_ms": 1.341299997875467,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 5.595966649707407e-05,
+  "rmse": 7.102906965883449e-05,
+  "max_abs": 0.00032842159271240234
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 9.408852201886475e-05,
+  "max_abs_p95": 0.00012297826469875872,
+  "max_abs_max": 0.00013299845159053802
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.7201563999988139,
+    "per_iter_ms": 17.20156399998814,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.7743669000046793,
+    "per_iter_ms": 7.743669000046793,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.24137469999550376,
+    "per_iter_ms": 2.4137469999550376,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.06794589999481104,
+    "per_iter_ms": 0.6794589999481104,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 3.269445900004939,
+    "per_iter_ms": 32.69445900004939,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.7382759999891277,
+    "per_iter_ms": 7.382759999891277,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.7718214451178937e-08,
+  "rmse": 2.7056486828769266e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.743543975862849e-08,
+  "rmse": 2.734637760681835e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0366510256053516e-08,
+  "rmse": 3.031561490729473e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_L64_nearest\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_meta_float32.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_meta_float32.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_meta_float32",
+  "group": "tesi_piano_completo",
+  "description": "Precisione metadati LUT"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 331.31890000368,
+  "ref_ms": 12.61499999964144,
+  "dense_numpy_ms": 1.577599992742762,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7793408915167674e-05,
+  "rmse": 2.2365464246831834e-05,
+  "max_abs": 8.732080459594727e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.1835841835127212e-05,
+  "max_abs_p95": 2.5383615138707682e-05,
+  "max_abs_max": 2.6378780603408813e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 80700,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 4480,
+      "y_min_bytes": 4480
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.853701527614572,
+    "model_over_lut": 0.08436183395291202
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.894993699999759,
+    "per_iter_ms": 18.94993699999759,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6935711000114679,
+    "per_iter_ms": 6.935711000114679,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.1999523999984376,
+    "per_iter_ms": 1.9995239999843761,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.046449900008155964,
+    "per_iter_ms": 0.46449900008155964,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.7483964999992168,
+    "per_iter_ms": 27.483964999992168,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.7358614999975543,
+    "per_iter_ms": 7.3586149999755435,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.7678475572324714e-08,
+  "rmse": 2.710167379404993e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.743543975862849e-08,
+  "rmse": 2.734637760681835e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0366510256053516e-08,
+  "rmse": 3.031561490729473e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_meta_float32\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_model_seed1.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_model_seed1.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_model_seed1",
+  "group": "tesi_piano_completo",
+  "description": "Inizializzazione modello; input invariati"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 313.1797999958508,
+  "ref_ms": 8.109400005196221,
+  "dense_numpy_ms": 1.752600001054816,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7531219782540575e-05,
+  "rmse": 2.1924412067164667e-05,
+  "max_abs": 9.226799011230469e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2093148800195195e-05,
+  "max_abs_p95": 2.7215108275413513e-05,
+  "max_abs_max": 2.9861927032470703e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.4217298999865307,
+    "per_iter_ms": 14.217298999865307,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.649802500003716,
+    "per_iter_ms": 6.49802500003716,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.20849469999666326,
+    "per_iter_ms": 2.0849469999666326,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.05385979999846313,
+    "per_iter_ms": 0.5385979999846313,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 3.1218415000039386,
+    "per_iter_ms": 31.218415000039386,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.831951799991657,
+    "per_iter_ms": 8.31951799991657,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8559148884378374e-08,
+  "rmse": 2.7922526513179946e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.7243827699076064e-08,
+  "rmse": 2.6547802178811253e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.1054077592452813e-08,
+  "rmse": 3.111655288989823e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_model_seed1\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_model_seed2.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_model_seed2.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_model_seed2",
+  "group": "tesi_piano_completo",
+  "description": "Inizializzazione modello; input invariati"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 282.7663000061875,
+  "ref_ms": 11.664199992083013,
+  "dense_numpy_ms": 3.1069999968167394,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.781489118002355e-05,
+  "rmse": 2.2457434170064516e-05,
+  "max_abs": 8.341670036315918e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2983987946645357e-05,
+  "max_abs_p95": 2.6927049475489184e-05,
+  "max_abs_max": 3.1371600925922394e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.6712440000119386,
+    "per_iter_ms": 16.712440000119386,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.9175369000004139,
+    "per_iter_ms": 9.175369000004139,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.3231205000047339,
+    "per_iter_ms": 3.231205000047339,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.049381099990569055,
+    "per_iter_ms": 0.4938109999056906,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.836783699996886,
+    "per_iter_ms": 28.36783699996886,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.8282228000025498,
+    "per_iter_ms": 8.282228000025498,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.61421613853463e-08,
+  "rmse": 2.455378833587929e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.6097914112833678e-08,
+  "rmse": 2.5283663163122583e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 1.8538795387712526e-08,
+  "rmse": 2.7939382363229015e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_model_seed2\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_model_seed3.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_model_seed3.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_model_seed3",
+  "group": "tesi_piano_completo",
+  "description": "Inizializzazione modello; input invariati"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 279.94750000652857,
+  "ref_ms": 6.275000007008202,
+  "dense_numpy_ms": 1.3682999997399747,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.8096370695275255e-05,
+  "rmse": 2.2784450266044587e-05,
+  "max_abs": 8.881092071533203e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.3069040253176354e-05,
+  "max_abs_p95": 2.6365834855823778e-05,
+  "max_abs_max": 2.7298927307128906e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.763809800002491,
+    "per_iter_ms": 17.63809800002491,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.7539354000036838,
+    "per_iter_ms": 7.5393540000368375,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.19318899999780115,
+    "per_iter_ms": 1.9318899999780115,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.05204330000560731,
+    "per_iter_ms": 0.5204330000560731,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 3.2663210000027902,
+    "per_iter_ms": 32.6632100000279,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.7043287999986205,
+    "per_iter_ms": 7.043287999986205,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.6451172868414687e-08,
+  "rmse": 2.4899865280758604e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.545201655517303e-08,
+  "rmse": 2.399299425803747e-08,
+  "max_abs": 1.2386590242385864e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 1.8319227024221618e-08,
+  "rmse": 2.7512026434806103e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_model_seed3\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_model_seed4.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_model_seed4.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_model_seed4",
+  "group": "tesi_piano_completo",
+  "description": "Inizializzazione modello; input invariati"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 285.97940001054667,
+  "ref_ms": 12.27140000264626,
+  "dense_numpy_ms": 3.54769999103155,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7672877220320515e-05,
+  "rmse": 2.223532101197634e-05,
+  "max_abs": 0.0001093447208404541
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.269410470034927e-05,
+  "max_abs_p95": 2.7128495275974274e-05,
+  "max_abs_max": 3.011152148246765e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.428250000011758,
+    "per_iter_ms": 14.28250000011758,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.8052080000052229,
+    "per_iter_ms": 8.052080000052229,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.17844849999528378,
+    "per_iter_ms": 1.7844849999528378,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.04617540001345333,
+    "per_iter_ms": 0.46175400013453327,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 3.368198800002574,
+    "per_iter_ms": 33.68198800002574,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.8206369999970775,
+    "per_iter_ms": 8.206369999970775,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.6006044489813576e-08,
+  "rmse": 2.4367352580156876e-08,
+  "max_abs": 1.9371509552001953e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.4994633090736897e-08,
+  "rmse": 2.348791205974976e-08,
+  "max_abs": 1.4901161193847656e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 1.7881056635360437e-08,
+  "rmse": 2.6646366890759055e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_model_seed4\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_N1.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_N1.yaml
+C:\Users\ivano\Documents\ivano\uni\tesi\.venv-install-check-20261111\Lib\site-packages\kan\MultKAN.py:813: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1927.)
+  self.subnode_actscale.append(torch.std(x, dim=0).detach())
+C:\Users\ivano\Documents\ivano\uni\tesi\.venv-install-check-20261111\Lib\site-packages\kan\MultKAN.py:823: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1927.)
+  input_range = torch.std(preacts, dim=0) + 0.1
+C:\Users\ivano\Documents\ivano\uni\tesi\.venv-install-check-20261111\Lib\site-packages\kan\MultKAN.py:824: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1927.)
+  output_range_spline = torch.std(postacts_numerical, dim=0) # for training, only penalize the spline part
+C:\Users\ivano\Documents\ivano\uni\tesi\.venv-install-check-20261111\Lib\site-packages\kan\MultKAN.py:825: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1927.)
+  output_range = torch.std(postacts, dim=0) # for visualization, include the contribution from both spline + symbolic
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_N1",
+  "group": "tesi_piano_completo",
+  "description": "Batch effettivo; tempi/batch e throughput"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.2654215097427368,
+  "x_sample_max": 1.3040000200271606,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 257.6104000036139,
+  "ref_ms": 5.653000000165775,
+  "dense_numpy_ms": 0.4313000099500641,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.8596183508634567e-05,
+  "rmse": 2.2833881303085946e-05,
+  "max_abs": 3.5375356674194336e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 0.5823526999884052,
+    "per_iter_ms": 5.823526999884052,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.4588915999920573,
+    "per_iter_ms": 4.588915999920573,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.050549499996122904,
+    "per_iter_ms": 0.505494999961229,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.0007866999949328601,
+    "per_iter_ms": 0.007866999949328601,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 1.825741000007838,
+    "per_iter_ms": 18.25741000007838,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.0027483000012580305,
+    "per_iter_ms": 0.027483000012580305,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.1641532182693481e-08,
+  "rmse": 1.6503078015261963e-08,
+  "max_abs": 2.9802322387695312e-08
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 2.3748725652694702e-08,
+  "rmse": 3.017829897089541e-08,
+  "max_abs": 5.960464477539063e-08
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 1.6298145055770874e-08,
+  "rmse": 2.1440655473270454e-08,
+  "max_abs": 2.9802322387695312e-08
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_N1\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_N16.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_N16.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_N16",
+  "group": "tesi_piano_completo",
+  "description": "Batch effettivo; tempi/batch e throughput"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 16,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 278.4683999925619,
+  "ref_ms": 7.248299996717833,
+  "dense_numpy_ms": 1.3858000020263717,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.879282353911549e-05,
+  "rmse": 2.3415841496898793e-05,
+  "max_abs": 6.150081753730774e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 0.5314132999919821,
+    "per_iter_ms": 5.314132999919821,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.3906540999887511,
+    "per_iter_ms": 3.906540999887511,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.07693890000518877,
+    "per_iter_ms": 0.7693890000518877,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.0015695000038249418,
+    "per_iter_ms": 0.015695000038249418,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 1.8157474000036018,
+    "per_iter_ms": 18.157474000036018,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.012301599999773316,
+    "per_iter_ms": 0.12301599999773316,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.4028046280145645e-08,
+  "rmse": 2.2082424777636334e-08,
+  "max_abs": 8.940696716308594e-08
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.333683030679822e-08,
+  "rmse": 2.7120647061451564e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.1078449208289385e-08,
+  "rmse": 3.446965024522797e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_N16\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_N256.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_N256.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_N256",
+  "group": "tesi_piano_completo",
+  "description": "Batch effettivo; tempi/batch e throughput"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 256,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 292.02449999866076,
+  "ref_ms": 4.034800003864802,
+  "dense_numpy_ms": 0.8238000009441748,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7386424588039517e-05,
+  "rmse": 2.1995974748278968e-05,
+  "max_abs": 7.82012939453125e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 0.9105453000083799,
+    "per_iter_ms": 9.105453000083799,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.5059009999968112,
+    "per_iter_ms": 5.0590099999681115,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.10086909998790361,
+    "per_iter_ms": 1.008690999879036,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.011446500007878058,
+    "per_iter_ms": 0.11446500007878058,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.255396799999289,
+    "per_iter_ms": 22.553967999992892,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.18741620000218973,
+    "per_iter_ms": 1.8741620000218973,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.7199695889758004e-08,
+  "rmse": 2.703236745560389e-08,
+  "max_abs": 1.2293457984924316e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.6817580217320938e-08,
+  "rmse": 2.7115484968476267e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 1.9620458147073805e-08,
+  "rmse": 2.999250980906254e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_N256\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_N4096.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_N4096.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_N4096",
+  "group": "tesi_piano_completo",
+  "description": "Batch effettivo; tempi/batch e throughput"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 4096,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 266.02519999141805,
+  "ref_ms": 11.256899990257807,
+  "dense_numpy_ms": 4.941699997289106,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.781694300007075e-05,
+  "rmse": 2.2390191588783637e-05,
+  "max_abs": 9.28342342376709e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 3.784861300009652,
+    "per_iter_ms": 37.84861300009652,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 1.166863900012686,
+    "per_iter_ms": 11.66863900012686,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.4376510000001872,
+    "per_iter_ms": 4.376510000001872,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.20132119998743292,
+    "per_iter_ms": 2.013211999874329,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 5.146598499995889,
+    "per_iter_ms": 51.46598499995889,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 2.7380624000070384,
+    "per_iter_ms": 27.380624000070384,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.7691352383053527e-08,
+  "rmse": 2.711396085430806e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.698026963481425e-08,
+  "rmse": 2.67683777366301e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0413516210737725e-08,
+  "rmse": 3.040851836999536e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_N4096\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_oob_closed_clip_x.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_oob_closed_clip_x.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_oob_closed_clip_x",
+  "group": "tesi_piano_completo",
+  "description": "Normale senza clipping; confronto semantica OOB"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -3.8994216918945312,
+  "x_sample_max": 3.481837272644043,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": null,
+  "x_gen_clip_max": null,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 248.37380000099074,
+  "ref_ms": 5.215999990468845,
+  "dense_numpy_ms": 1.5168999962043017,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.5732421875,
+  "OOB_all_in_frac": 0.4267578125,
+  "OOB_per_coord_mean": 0.07958984375,
+  "OOB_per_coord_max": 0.09765625
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7867812857730314e-05,
+  "rmse": 2.2450411051977426e-05,
+  "max_abs": 8.761882781982422e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.1880319000047166,
+    "per_iter_ms": 11.880319000047166,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6168704000010621,
+    "per_iter_ms": 6.168704000010621,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.14283109999087173,
+    "per_iter_ms": 1.4283109999087173,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.049676099995849654,
+    "per_iter_ms": 0.4967609999584965,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.4672996000008425,
+    "per_iter_ms": 24.672996000008425,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6634030999994138,
+    "per_iter_ms": 6.634030999994138,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8246513633357608e-08,
+  "rmse": 2.9241085997000482e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.9163451270287624e-08,
+  "rmse": 3.068216614110497e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.1498113511597694e-08,
+  "rmse": 3.3224086593008906e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_oob_closed_clip_x\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_oob_closed_zero_spline.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_oob_closed_zero_spline.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_oob_closed_zero_spline",
+  "group": "tesi_piano_completo",
+  "description": "Normale senza clipping; confronto semantica OOB"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -3.8994216918945312,
+  "x_sample_max": 3.481837272644043,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": null,
+  "x_gen_clip_max": null,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 266.94279999355786,
+  "ref_ms": 5.31079999927897,
+  "dense_numpy_ms": 1.5423000004375353,
+  "oob_behavior_effective": "zero",
+  "oob_mode_cfg": "zero_spline",
+  "oob_policy_mode": "zero_spline"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.5732421875,
+  "OOB_all_in_frac": 0.4267578125,
+  "OOB_per_coord_mean": 0.07958984375,
+  "OOB_per_coord_max": 0.09765625
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7867812857730314e-05,
+  "rmse": 2.2450411051977426e-05,
+  "max_abs": 8.761882781982422e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.1422998000052758,
+    "per_iter_ms": 11.422998000052758,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6081280000071274,
+    "per_iter_ms": 6.081280000071274,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.17967939999653026,
+    "per_iter_ms": 1.7967939999653026,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.05622790000052191,
+    "per_iter_ms": 0.5622790000052191,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.729442399999243,
+    "per_iter_ms": 27.294423999992432,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6552793000009842,
+    "per_iter_ms": 6.552793000009842,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8246513633357608e-08,
+  "rmse": 2.9241085997000482e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.9163451270287624e-08,
+  "rmse": 3.068216614110497e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.1498113511597694e-08,
+  "rmse": 3.3224086593008906e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_oob_closed_zero_spline\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_oob_half_open_clip_x.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_oob_half_open_clip_x.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_oob_half_open_clip_x",
+  "group": "tesi_piano_completo",
+  "description": "Normale senza clipping; confronto semantica OOB"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "half_open",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -3.8994216918945312,
+  "x_sample_max": 3.481837272644043,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": null,
+  "x_gen_clip_max": null,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 246.99949999921955,
+  "ref_ms": 12.639699998544529,
+  "dense_numpy_ms": 1.8451000069035217,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.5732421875,
+  "OOB_all_in_frac": 0.4267578125,
+  "OOB_per_coord_mean": 0.07958984375,
+  "OOB_per_coord_max": 0.09765625
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7867812857730314e-05,
+  "rmse": 2.2450411051977426e-05,
+  "max_abs": 8.761882781982422e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.175761100006639,
+    "per_iter_ms": 11.75761100006639,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.795402700008708,
+    "per_iter_ms": 7.9540270000870805,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.15093630000774283,
+    "per_iter_ms": 1.5093630000774283,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.047927500010700896,
+    "per_iter_ms": 0.47927500010700896,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 3.1719998000044143,
+    "per_iter_ms": 31.719998000044143,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6473117999994429,
+    "per_iter_ms": 6.473117999994429,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8246513633357608e-08,
+  "rmse": 2.9241085997000482e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.9163451270287624e-08,
+  "rmse": 3.068216614110497e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.1498113511597694e-08,
+  "rmse": 3.3224086593008906e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_oob_half_open_clip_x\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_oob_half_open_zero_spline.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_oob_half_open_zero_spline.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_oob_half_open_zero_spline",
+  "group": "tesi_piano_completo",
+  "description": "Normale senza clipping; confronto semantica OOB"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "half_open",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -3.8994216918945312,
+  "x_sample_max": 3.481837272644043,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": null,
+  "x_gen_clip_max": null,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 240.9944999963045,
+  "ref_ms": 5.76790000195615,
+  "dense_numpy_ms": 1.5933999966364354,
+  "oob_behavior_effective": "zero",
+  "oob_mode_cfg": "zero_spline",
+  "oob_policy_mode": "zero_spline"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.5732421875,
+  "OOB_all_in_frac": 0.4267578125,
+  "OOB_per_coord_mean": 0.07958984375,
+  "OOB_per_coord_max": 0.09765625
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7867812857730314e-05,
+  "rmse": 2.2450411051977426e-05,
+  "max_abs": 8.761882781982422e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.1426580999977887,
+    "per_iter_ms": 11.426580999977887,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.64257070000167,
+    "per_iter_ms": 6.4257070000167005,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.18128439999418333,
+    "per_iter_ms": 1.8128439999418333,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.042059799990965985,
+    "per_iter_ms": 0.42059799990965985,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.4557556999934604,
+    "per_iter_ms": 24.557556999934604,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6898150000051828,
+    "per_iter_ms": 6.898150000051828,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8246513633357608e-08,
+  "rmse": 2.9241085997000482e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.9163451270287624e-08,
+  "rmse": 3.068216614110497e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.1498113511597694e-08,
+  "rmse": 3.3224086593008906e-08,
+  "max_abs": 3.5762786865234375e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_oob_half_open_zero_spline\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_out16.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_out16.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_out16",
+  "group": "tesi_piano_completo",
+  "description": "Numero uscite; cambia carico di lavoro"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 16,
+  "edges": 160,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 486.996799998451,
+  "ref_ms": 13.526599999750033,
+  "dense_numpy_ms": 2.2003999911248684,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.817022348404862e-05,
+  "rmse": 2.2803897081757896e-05,
+  "max_abs": 8.872151374816895e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 160.0,
+  "max_abs_mean": 2.3140350094763562e-05,
+  "max_abs_p95": 2.7152802431373857e-05,
+  "max_abs_max": 3.071315586566925e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 13016,
+    "buffers_bytes": 0,
+    "total_bytes": 13016,
+    "params_count": 3254,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 152380,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 143360,
+      "scale_bytes": 4480,
+      "y_min_bytes": 4480
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.707129686539643,
+    "model_over_lut": 0.08541803386271164
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.9247599000082118,
+    "per_iter_ms": 19.24759900008212,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 1.194161499995971,
+    "per_iter_ms": 11.941614999959711,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.24575059999187943,
+    "per_iter_ms": 2.4575059999187943,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.07142290000047069,
+    "per_iter_ms": 0.7142290000047069,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 5.477630800000043,
+    "per_iter_ms": 54.77630800000043,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 1.3117749999946682,
+    "per_iter_ms": 13.117749999946682,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.7429419685299763e-08,
+  "rmse": 2.6755930804256423e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.61019997335643e-08,
+  "rmse": 2.5740984455069338e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 1.9464664546831045e-08,
+  "rmse": 2.9609884322212565e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_out16\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_out32.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_out32.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_out32",
+  "group": "tesi_piano_completo",
+  "description": "Numero uscite; cambia carico di lavoro"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 32,
+  "edges": 320,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 947.0029000076465,
+  "ref_ms": 23.511000006692484,
+  "dense_numpy_ms": 3.0467000033240765,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.777595025487244e-05,
+  "rmse": 2.2307536710286513e-05,
+  "max_abs": 9.534507989883423e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 320.0,
+  "max_abs_mean": 2.262231646454893e-05,
+  "max_abs_p95": 2.6547535526333377e-05,
+  "max_abs_max": 2.934178337454796e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 25432,
+    "buffers_bytes": 0,
+    "total_bytes": 25432,
+    "params_count": 6358,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 304700,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 286720,
+      "scale_bytes": 8960,
+      "y_min_bytes": 8960
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.980968858131488,
+    "model_over_lut": 0.08346570397111913
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 3.6844831999915186,
+    "per_iter_ms": 36.844831999915186,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 2.3986805000022287,
+    "per_iter_ms": 23.986805000022287,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.2598357999959262,
+    "per_iter_ms": 2.598357999959262,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.13204769999720156,
+    "per_iter_ms": 1.3204769999720156,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 10.196695399994496,
+    "per_iter_ms": 101.96695399994496,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 2.7187277999910293,
+    "per_iter_ms": 27.187277999910293,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.6995748808312783e-08,
+  "rmse": 2.6355953863799186e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 5.5668607501502265e-09,
+  "rmse": 1.4183387797572777e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 1.640442448547219e-08,
+  "rmse": 2.5727834085387258e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_out32\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_out4.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_out4.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_out4",
+  "group": "tesi_piano_completo",
+  "description": "Numero uscite; cambia carico di lavoro"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 4,
+  "edges": 40,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 110.97460000019055,
+  "ref_ms": 6.6067000007024035,
+  "dense_numpy_ms": 2.651500006322749,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.764690750860609e-05,
+  "rmse": 2.21143891394604e-05,
+  "max_abs": 8.744839578866959e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 40.0,
+  "max_abs_mean": 2.2538588382303715e-05,
+  "max_abs_p95": 2.7330219381838106e-05,
+  "max_abs_max": 3.1091272830963135e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 3704,
+    "buffers_bytes": 0,
+    "total_bytes": 3704,
+    "params_count": 926,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 38140,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 35840,
+      "scale_bytes": 1120,
+      "y_min_bytes": 1120
+    }
+  },
+  "ratios": {
+    "lut_over_model": 10.296976241900648,
+    "model_over_lut": 0.09711588883062401
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 0.7884478999912972,
+    "per_iter_ms": 7.8844789999129725,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.29198619999806397,
+    "per_iter_ms": 2.9198619999806397,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.14194549999956507,
+    "per_iter_ms": 1.4194549999956507,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.03666720000910573,
+    "per_iter_ms": 0.36667200009105727,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 1.3243593000079272,
+    "per_iter_ms": 13.243593000079272,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.32548110000789165,
+    "per_iter_ms": 3.2548110000789165,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 2.2049697179227223e-08,
+  "rmse": 3.268554849000793e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 7.580354122183053e-09,
+  "rmse": 1.7837336940829118e-08,
+  "max_abs": 1.1920928955078125e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0946478329619822e-08,
+  "rmse": 3.144048577041758e-08,
+  "max_abs": 1.4901161193847656e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_out4\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_phi.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_phi.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_phi",
+  "group": "tesi_piano_completo",
+  "description": "Tabulazione funzione completa"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "phi",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 259.1303999943193,
+  "ref_ms": 4.830499994568527,
+  "dense_numpy_ms": 1.1110999912489206,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 0.00040637527126818895,
+  "rmse": 0.0005347716505639255,
+  "max_abs": 0.002791285514831543
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 0.0009507980430498719,
+  "max_abs_p95": 0.0017138004768639803,
+  "max_abs_max": 0.0019035041332244873
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.2393866000056732,
+    "per_iter_ms": 12.393866000056732,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.5227470999961952,
+    "per_iter_ms": 5.227470999961952,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.1298298000037903,
+    "per_iter_ms": 1.298298000037903,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.042798900001798756,
+    "per_iter_ms": 0.42798900001798756,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.687925300007919,
+    "per_iter_ms": 26.87925300007919,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6703896999970311,
+    "per_iter_ms": 6.703896999970311,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 7.7114226115782e-09,
+  "rmse": 1.6302557526159944e-08,
+  "max_abs": 1.1920928955078125e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.743543975862849e-08,
+  "rmse": 2.734637760681835e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0366510256053516e-08,
+  "rmse": 3.031561490729473e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_phi\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_reference.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_reference.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_reference",
+  "group": "tesi_piano_completo",
+  "description": "Riferimento contemporaneo, L64 linear"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "int8",
+  "scheme": "symmetric",
+  "qmin": -127,
+  "qmax": 127,
+  "build_ms": 258.64099999307655,
+  "ref_ms": 6.023499998264015,
+  "dense_numpy_ms": 1.7198999994434416,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 1.7867389033199288e-05,
+  "rmse": 2.2450129108619876e-05,
+  "max_abs": 8.761882781982422e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 2.2535454263561405e-05,
+  "max_abs_p95": 2.6222411179332994e-05,
+  "max_abs_max": 2.7310103178024292e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.1917421000107424,
+    "per_iter_ms": 11.917421000107424,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.5593847999989521,
+    "per_iter_ms": 5.593847999989521,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.15977240000211168,
+    "per_iter_ms": 1.5977240000211168,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.05005009999149479,
+    "per_iter_ms": 0.5005009999149479,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.4657541000051424,
+    "per_iter_ms": 24.657541000051424,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6585655999951996,
+    "per_iter_ms": 6.585655999951996,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.758145451447035e-08,
+  "rmse": 2.6868949731806424e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.743543975862849e-08,
+  "rmse": 2.734637760681835e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0366510256053516e-08,
+  "rmse": 3.031561490729473e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_riferimento\run_000
+C:\Users\ivano\Documents\ivano\uni\tesi\lut-kan\outputs\readme_environment_comparison_20261111\configs\cpu_uint8_asymmetric.yaml: 1 runs, 1 thread(s)
+[1/1] cpu_uint8_asymmetric.yaml
+checkpoint directory created: ./model
+saving model version 0.0
+
+[RESULTS] experiment
+{
+  "name": "cpu_uint8_asymmetric",
+  "group": "tesi_piano_completo",
+  "description": "Schema coerente uint8 asimmetrico"
+}
+
+[RESULTS] float_backend
+"pykan"
+
+[RESULTS] converter_enabled
+true
+
+[RESULTS] run_params
+{
+  "label": "pykan",
+  "N": 1024,
+  "runtime_seed": 0,
+  "evaluation_input_seed": 0,
+  "in_dim": 10,
+  "out_dim": 8,
+  "edges": 80,
+  "device": "cpu",
+  "L": 64,
+  "interp": "linear",
+  "value_representation": "spline_component",
+  "boundary_mode": "closed",
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "x_sample_min": -1.75,
+  "x_sample_max": 1.75,
+  "x_gen_distribution": "normal",
+  "x_gen_mean": 0.0,
+  "x_gen_std": 1.0,
+  "x_gen_x_min": null,
+  "x_gen_x_max": null,
+  "x_gen_clip_min": -1.75,
+  "x_gen_clip_max": 1.75,
+  "dtype": "uint8",
+  "scheme": "asymmetric",
+  "qmin": 0,
+  "qmax": 255,
+  "build_ms": 230.6671000114875,
+  "ref_ms": 10.290900012478232,
+  "dense_numpy_ms": 1.7330999980913475,
+  "oob_behavior_effective": "clip",
+  "oob_mode_cfg": "clip_x",
+  "oob_policy_mode": "clip_x"
+}
+
+[RESULTS] input_sanity
+{
+  "x_min": -1.75,
+  "x_max": 1.75,
+  "OOB_any_frac": 0.0,
+  "OOB_all_in_frac": 1.0,
+  "OOB_per_coord_mean": 0.0,
+  "OOB_per_coord_max": 0.0
+}
+
+[RESULTS] output_sanity
+{
+  "mae": 9.718332876218483e-06,
+  "rmse": 1.2334940947766881e-05,
+  "max_abs": 5.07161021232605e-05
+}
+
+[RESULTS] phi_error_summary
+{
+  "edges": 80.0,
+  "max_abs_mean": 1.6290767234750092e-05,
+  "max_abs_p95": 2.1336309146136045e-05,
+  "max_abs_max": 2.4376437067985535e-05
+}
+
+[RESULTS] memory
+{
+  "model": {
+    "params_bytes": 6808,
+    "buffers_bytes": 0,
+    "total_bytes": 6808,
+    "params_count": 1702,
+    "buffers_count": 0
+  },
+  "lut": {
+    "lut_total_bytes": 76220,
+    "breakdown": {
+      "knots_bytes": 60,
+      "q_table_bytes": 71680,
+      "scale_bytes": 2240,
+      "y_min_bytes": 2240
+    }
+  },
+  "ratios": {
+    "lut_over_model": 11.195652173913043,
+    "model_over_lut": 0.08932038834951456
+  }
+}
+
+[RESULTS] speed
+{
+  "speed_float": {
+    "total_s": 1.6635011000034865,
+    "per_iter_ms": 16.635011000034865,
+    "iters": 100.0
+  },
+  "speed_ref": {
+    "total_s": 0.6268779999954859,
+    "per_iter_ms": 6.268779999954859,
+    "iters": 100.0
+  },
+  "speed_dense_numpy": {
+    "total_s": 0.17153539998980705,
+    "per_iter_ms": 1.7153539998980705,
+    "iters": 100.0
+  },
+  "speed_dense_numba": {
+    "total_s": 0.04323819999990519,
+    "per_iter_ms": 0.4323819999990519,
+    "iters": 100.0
+  },
+  "speed_bspline_numpy": {
+    "total_s": 2.451665000000503,
+    "per_iter_ms": 24.51665000000503,
+    "iters": 100.0
+  },
+  "speed_bspline_numba": {
+    "total_s": 0.6485910000046715,
+    "per_iter_ms": 6.485910000046715,
+    "iters": 100.0
+  }
+}
+
+[RESULTS] dense_numpy_vs_ref
+{
+  "mae": 0.0,
+  "rmse": 0.0,
+  "max_abs": 0.0
+}
+
+[RESULTS] numba_vs_ref
+{
+  "mae": 1.8074699070780298e-08,
+  "rmse": 2.7476056985165087e-08,
+  "max_abs": 1.7881393432617188e-07
+}
+
+[RESULTS] bspline_numpy_vs_float
+{
+  "mae": 1.743543975862849e-08,
+  "rmse": 2.734637760681835e-08,
+  "max_abs": 2.384185791015625e-07
+}
+
+[RESULTS] bspline_numba_vs_float
+{
+  "mae": 2.0366510256053516e-08,
+  "rmse": 3.031561490729473e-08,
+  "max_abs": 2.384185791015625e-07
+}
+DONE. Output: outputs\readme_environment_comparison_20261111\results\cpu_uint8_asymmetric\run_000

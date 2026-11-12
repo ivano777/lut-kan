@@ -1,0 +1,23 @@
+{
+  "experiment": {
+    "name": "cpu_k2",
+    "group": "tesi_piano_completo",
+    "description": "Grado spline; dominio esteso puo cambiare"
+  },
+  "out_dir": "outputs/readme_environment_comparison_20261111/results/cpu_k2/run_000",
+  "git_hash": "b3cefa8",
+  "started_at": "2026-11-11T19:30:40",
+  "converter_enabled": true,
+  "float_backend": "pykan",
+  "pip_freeze": {
+    "ok": true,
+    "lines": []
+  },
+  "pykan": {
+    "present": true,
+    "module_name": "kan",
+    "version": "0.2.8",
+    "file": "C:\\Users\\ivano\\Documents\\ivano\\uni\\tesi\\.venv-install-check-20261111\\Lib\\site-packages\\kan\\__init__.py",
+    "git_hash": null
+  }
+}

@@ -1,0 +1,10 @@
+_base_: input_seed_mae_10x8.yaml
+
+experiment:
+  name: input_model_seed_mae_10x8
+  description: "PyKAN 10->8, L32, 1024 inputs; random model and input seeds per run"
+float_model:
+  arch:
+    seed: random
+logging:
+  out_dir: outputs/tesi_old/input_model_seed_mae_10x8_10

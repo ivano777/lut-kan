@@ -1,0 +1,29 @@
+_base_: ../configs/ncaa_revision_base.yaml
+
+experiment:
+  name: input_seed_mae
+  group: seed_sensitivity
+  description: "Fixed PyKAN 2->2, L32, 256 inputs; random input seed per run"
+runtime:
+  seed: random
+float_model:
+  arch:
+    width: [2, 2]
+    seed: 0
+evaluation_inputs:
+  num_samples: 256
+  batch_size: 256
+converter:
+  build_lut:
+    L: 32
+evaluation:
+  extra:
+    phi_error:
+      enable: false
+    speed:
+      enable: false
+      warmup_iters: 0
+      measure_iters: 1
+logging:
+  out_dir: outputs/tesi_old/input_seed_mae_100
+  versioning: increment

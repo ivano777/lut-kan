@@ -1,0 +1,8 @@
+_base_: ../configs/ncaa_revision_base.yaml
+
+experiment:
+  name: clean_install_reference
+  group: installation_check
+logging:
+  out_dir: outputs/install_check_20261111
+  versioning: increment

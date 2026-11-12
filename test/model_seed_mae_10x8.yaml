@@ -1,0 +1,9 @@
+_base_: input_model_seed_mae_10x8.yaml
+
+experiment:
+  name: model_seed_mae_10x8
+  description: "PyKAN 10->8, L32, 1024 inputs; random model seed, fixed input seed 0"
+runtime:
+  seed: 0
+logging:
+  out_dir: outputs/tesi_old/model_seed_mae_10x8_10

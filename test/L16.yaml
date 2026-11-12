@@ -1,0 +1,28 @@
+_base_: ../configs/ncaa_revision_base.yaml
+
+experiment:
+  name: test_L16
+  group: smoke
+
+float_model:
+  arch:
+    width: [2, 2]
+
+evaluation_inputs:
+  num_samples: 16
+
+converter:
+  build_lut:
+    L: 16
+
+evaluation:
+  extra:
+    phi_error:
+      enable: false
+    speed:
+      warmup_iters: 2
+      measure_iters: 5
+
+logging:
+  out_dir: outputs/tesi_old/test/L16
+  versioning: increment
