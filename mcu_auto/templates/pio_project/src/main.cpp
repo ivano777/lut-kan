@@ -556,6 +556,19 @@ void setup() {
   Serial.begin(115200);
   delay(200);
 
+#ifdef CASE_REFERENCE_COUNT
+  for (int row = 0; row < CASE_REFERENCE_COUNT; ++row) {
+    lut_forward(reference_inputs[row], y_lut);
+    Serial.print("LUT_REFERENCE,");
+    Serial.print(reference_ids[row]);
+    for (int j = 0; j < CASE_OUT_DIM; ++j) {
+      Serial.print(',');
+      Serial.print(y_lut[j], 9);
+    }
+    Serial.println();
+  }
+#endif
+
   const int iters  = (int)CASE_ITERS;
   const int reps   = (int)CASE_REPEATS;
   const int warmup = (int)CASE_WARMUP;

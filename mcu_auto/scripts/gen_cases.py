@@ -15,6 +15,7 @@ import argparse
 import itertools
 import json
 import shutil
+import csv
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, Any, List
@@ -30,6 +31,8 @@ sys.path.insert(0, str(REPO_ROOT))
 from src.models.jacobi_adapter import JacobiKANSingleLayerAdapter
 from src.models.bspline_adapter import BSplineKANSingleLayerAdapter
 from src.quant.lut_builder import build_lut_for_edges
+from src.kernels.lut_backend_reference import forward_reference
+from src.kernels.lut_contract import _edge_matrix, pack_dense_layer
 
 # ---- Wokwi-verified targets (only boards supported by Wokwi) ----
 TARGETS: Dict[str, Dict[str, str]] = {
@@ -194,24 +197,27 @@ def _arr_f32_pgm(name: str, data: np.ndarray, per_line: int = 6) -> str:
 
 
 def _export_case_header(case_dir: Path, target: str, cs: CaseSpec,
-                        art: Any, adapter: Any) -> None:
+                        art: Any, adapter: Any, layer_edges: List) -> None:
     """Write include/case_layer.h with all arrays."""
 
     edges = cs.in_dim * cs.out_dim
     K = cs.segments
     L = cs.L
-    q_table = art.q_table
+    # Integer-array indexing copies the rows in firmware order and preserves art.
+    if len(layer_edges) != edges:
+        raise ValueError("Expected one edge per input-output pair.")
+    source_rows = _edge_matrix(layer_edges, cs.in_dim, cs.out_dim).ravel()
+    q_table = art.q_table[source_rows]
+    scale = art.scale[source_rows].astype(np.float32, copy=False)
 
     if cs.scheme == "uint8_asymm":
-        scale = art.scale.astype(np.float32)
-        y_min = art.y_min.astype(np.float32)
+        y_min = art.y_min[source_rows].astype(np.float32, copy=False)
         q_u8 = q_table.astype(np.uint8)
         scheme_asymm = 1
         q_desc = "uint8_asymm"
     elif cs.scheme == "int8_symm":
         q_i8 = q_table.astype(np.int8)
         q_u8 = (q_i8.astype(np.int16) + 128).astype(np.uint8)
-        scale = art.scale.astype(np.float32)
         y_min = np.zeros_like(scale, dtype=np.float32)
         scheme_asymm = 0
         q_desc = "int8_symm"
@@ -419,7 +425,50 @@ def _estimate_case_size(cs: CaseSpec) -> dict:
     }
 
 
-def _build_one_case(target: str, cs: CaseSpec, out_root: Path) -> str:
+def _write_python_reference(case_dir: Path, reference_inputs: Path, cs: CaseSpec, art, edges) -> None:
+    with reference_inputs.open(encoding="utf-8", newline="") as input_file:
+        rows = list(csv.DictReader(input_file))
+
+    input_columns = [f"x{i}" for i in range(cs.in_dim)]
+    x = np.array(
+        [[row[column] for column in input_columns] for row in rows],
+        dtype=np.float32,
+    )
+
+    packed = pack_dense_layer(
+        art,
+        edges=edges,
+        in_dim=cs.in_dim,
+        out_dim=cs.out_dim,
+        boundary_mode="closed",
+    )
+    y = forward_reference(x, packed)
+
+    with (case_dir / "python_reference.csv").open(
+            "w", encoding="utf-8", newline=""
+    ) as output_file:
+        writer = csv.writer(output_file)
+        writer.writerow(["input_id", *(f"y{j}" for j in range(cs.out_dim))])
+        for row, output in zip(rows, y):
+            writer.writerow([row["input_id"], *output])
+
+    include_dir = case_dir / "include"
+    with (include_dir / "reference_inputs.h").open("w", encoding="utf-8") as header:
+        header.write("#pragma once\n")
+        header.write(f"#define CASE_REFERENCE_COUNT {len(rows)}\n")
+        header.write("static const char* const reference_ids[] = {\n")
+        for row in rows:
+            header.write(f'    {json.dumps(row["input_id"])},\n')
+        header.write("};\nstatic const float reference_inputs[][CASE_IN_DIM] = {\n")
+        for vector in x:
+            values = ", ".join(f"{value:.9e}f" for value in vector)
+            header.write("    {" + values + "},\n")
+        header.write("};\n")
+    with (include_dir / "case_layer.h").open("a", encoding="utf-8") as header:
+        header.write('\n#include "reference_inputs.h"\n')
+
+
+def _build_one_case(target: str, cs: CaseSpec, out_root: Path, reference_inputs: Path | None = None) -> str:
     case_id = _case_id(cs)
     case_dir = out_root / target / case_id
 
@@ -500,7 +549,10 @@ def _build_one_case(target: str, cs: CaseSpec, out_root: Path) -> str:
     _copy_project_template(case_dir)
     _copy_wokwi_templates(case_dir, target)
     _write_platformio_ini(case_dir, target)
-    _export_case_header(case_dir, target, cs, art, adapter)
+    _export_case_header(case_dir, target, cs, art, adapter, edges)
+
+    if reference_inputs is not None:
+        _write_python_reference(case_dir, reference_inputs, cs, art, edges)
 
     (case_dir / "meta.json").write_text(
         json.dumps(cs.__dict__, indent=2, sort_keys=True), encoding="utf-8"
@@ -589,7 +641,7 @@ def _expand_suite(grid: Dict, suite: str) -> List[CaseSpec]:
     return specs
 
 
-def generate_cases(targets: List[str], grid_path: Path, out_root: Path, suite: str) -> int:
+def generate_cases(targets: List[str], grid_path: Path, out_root: Path, suite: str, reference_inputs: Path | None = None) -> int:
     grid = _load_yaml(grid_path)
     if suite not in grid.get("suites", {}):
         raise ValueError(f"Suite '{suite}' not found. Available: {list(grid['suites'])}")
@@ -601,7 +653,7 @@ def generate_cases(targets: List[str], grid_path: Path, out_root: Path, suite: s
         if target not in TARGETS:
             raise ValueError(f"Unknown target '{target}'. Known: {list(TARGETS)}")
         for cs in specs:
-            _build_one_case(target, cs, out_root)
+            _build_one_case(target, cs, out_root, reference_inputs)
             count += 1
 
     return count
@@ -614,6 +666,8 @@ def main() -> None:
     ap.add_argument("--suite", default="smoke",
                     help="Suite name from grid.yaml (e.g. smoke, full, stress, extra_degrees)")
     ap.add_argument("--out", default=str(REPO_ROOT / "mcu_auto" / "cases"))
+    ap.add_argument("--reference-inputs", type=Path,
+                    help="CSV of input vectors to evaluate with the Python LUT reference")
     args = ap.parse_args()
 
     if args.targets == "all":
@@ -625,7 +679,8 @@ def main() -> None:
     out_root = Path(args.out)
     out_root.mkdir(parents=True, exist_ok=True)
 
-    n = generate_cases(targets, grid_path, out_root, args.suite)
+    n = generate_cases(targets, grid_path, out_root, args.suite, args.reference_inputs)
+
     print(f"Generated {n} cases under {out_root}")
 
 
